@@ -13,10 +13,7 @@ def main():
     information = """
 The German Shepherd, also known in Britain as an Alsatian, is a German breed of working dog of medium to large size.
     """
-    information1 = """
-
-The OSI (Open Systems Interconnection) reference model is a standardized framework developed by ISO to describe how data is transmitted across a network in seven distinct layers, each with specific roles. It helps in designing, understanding, and troubleshooting network systems by isolating functions.
-    """    
+ 
     summary_template=""" 
 given the information {information} about the german shepard dog i want you to explain:
 1. It's body structrue
