@@ -1,0 +1,18 @@
+name: Notify Teams on Pull Request
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send PR notification to Teams
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{
+                "text": "🚀 New Pull Request Created!\n\nRepository: ${{ github.repository }}\nPR Title: ${{ github.event.pull_request.title }}\nBranch: ${{ github.head_ref }}\nAuthor: ${{ github.actor }}\nPR URL: ${{ github.event.pull_request.html_url }}"
+              }' \
+          ${{ secrets.TEAMS_WEBHOOK_URL }}
